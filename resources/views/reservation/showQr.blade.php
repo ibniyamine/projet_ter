@@ -52,6 +52,16 @@
                                 <h3 class="text-primary">Scanner le QR</h3>
                             </a>
                         </div>
+                        @if(isset($billet))
+                        <div class="card-header bg-primary text-white text-center">Code QR et Détails du billet</div>
+                        <div class="card-body row">
+                            <div class="col-md-6 d-flex justify-content-center align-items-center">
+                                <div>{!! $qrCode !!}</div>
+                            </div>
+                        </div>
+                        @else
+                            <p class="text-center">Billet non trouvé.</p>
+                        @endif
                         
                         <a href="{{ route('reservation') }}"class="btn btn-primary py-3 w-100 mb-4">Voir les reservation</a>
                     </div>

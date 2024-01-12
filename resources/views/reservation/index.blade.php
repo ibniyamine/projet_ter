@@ -233,7 +233,10 @@
                                     <td>{{$billet->tarif}}</td>
                                     <td>{{$billet->classe}}</td>
                                     <td>{{$billet->heure_depart}}</td>
-                                    <td><a class="btn btn-sm btn-primary" href="{{ route('showQr') }}">Voir le QR</a></td>
+                                    <td>
+                                        <a class="btn btn-sm btn-primary" href="{{ route('showQr', $billet->id) }}">Voir le QR</a>
+                                        <a class="btn btn-sm btn-primary" href="{{ route('delete', $billet->id) }}">supprimer</a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

@@ -33,7 +33,8 @@ Route::get('/horaire', [HoraireController::class, 'index'])->middleware(['auth',
 Route::get('/reservation', [ReservationController::class, 'index'])->middleware(['auth', 'verified'])->name('reservation');
 Route::get('/createReservation', [ReservationController::class, 'create'])->middleware(['auth', 'verified'])->name('create');
 Route::post('/storeReservation', [ReservationController::class, 'store'])->middleware(['auth', 'verified'])->name('store');
-Route::get('/showQr', [ReservationController::class, 'show'])->middleware(['auth', 'verified'])->name('showQr');
+Route::get('/showQr/{id}', [ReservationController::class, 'show'])->middleware(['auth', 'verified'])->name('showQr');
+Route::get('/delete/{id}', [ReservationController::class, 'delete'])->middleware(['auth', 'verified'])->name('delete');
 
 
 Route::middleware('auth')->group(function () {
