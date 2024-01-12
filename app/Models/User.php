@@ -26,7 +26,7 @@ class User extends Authenticatable
     ];
 
 
-    public function comments(): HasMany
+    public function billets(): HasMany
     {
         return $this->hasMany(billet::class);
     }

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('classe');
             $table->decimal('tarif');
             $table->dateTime('heure_depart');
+            // $table->foreignId('user_id')->constrained();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

@@ -171,7 +171,7 @@
                             <i class="fa fa-chart-line fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Nombre de billet acheter</p>
-                                <h6 class="mb-0">5</h6>
+                                <h6 class="mb-0"></h6>
                             </div>
                         </div>
                     </div>
@@ -212,6 +212,7 @@
                         <h6 class="mb-0">liste des resérvations</h6>
                         <a class="btn btn-sm btn-primary" href="{{ route('create') }}">Reserver</a>
                     </div>
+                  
                     <div class="table-responsive">
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
@@ -241,6 +242,7 @@
                             @endforeach
                             </tbody>
                         </table>
+                       
                     </div>
                 </div>
             </div>

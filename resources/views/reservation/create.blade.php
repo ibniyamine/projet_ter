@@ -80,12 +80,12 @@
                                 </select>  
                                 <label for="">Destination</label>
                                 </div>
-                                <div class="form-floating mb-3">
-                                    <input type="number" name="user_id" class="form-control" id="floatingInput"  placeholder="destination">
+                                <!-- <div class="form-floating mb-3">
+                                    <input type="number" name="user_id" class="form-control" id="floatingInput"  placeholder="destination" required>
                                     <label for="">identifiant</label>
-                                </div>
+                                </div> -->
                                 <div class="form-floating mb-3">
-                                    <input type="datetime-local" name="heure_depart" class="form-control" id="heure_depart"  placeholder="heure">
+                                    <input type="datetime-local" name="heure_depart" class="form-control" id="heure_depart"  placeholder="heure" required>
                                     <label for="">heure</label>
                                 </div>
                                 <div class="form-floating mb-3">
@@ -111,7 +111,7 @@
     </div>
     <script src="public/js/jquery.js"></script>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function() {
         var input = document.getElementById('heure_depart');
 
         input.addEventListener('change', function() {
@@ -165,7 +165,7 @@
         });
 
     });
-</script>
+    </script>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
