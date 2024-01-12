@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HoraireController;
+use App\Http\Controllers\ReservationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +30,11 @@ Route::get('/dashboard', function () {
 
 
 Route::get('/horaire', [HoraireController::class, 'index'])->middleware(['auth', 'verified'])->name('horaire');
+Route::get('/reservation', [ReservationController::class, 'index'])->middleware(['auth', 'verified'])->name('reservation');
+Route::get('/createReservation', [ReservationController::class, 'create'])->middleware(['auth', 'verified'])->name('create');
+Route::post('/storeReservation', [ReservationController::class, 'store'])->middleware(['auth', 'verified'])->name('store');
+Route::get('/showQr', [ReservationController::class, 'show'])->middleware(['auth', 'verified'])->name('showQr');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

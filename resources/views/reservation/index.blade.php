@@ -5,7 +5,6 @@
 
 <head>
     <meta charset="utf-8">
-    <title>DarkPan - Bootstrap 5 Admin Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -63,13 +62,12 @@
                 <div class="navbar-nav w-100">
                     
                     <a href="{{ route('dashboard') }}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Tableau de bord</a>
-                    <a  href="{{ route('horaire') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Horaires</a>
-                    <a  href="{{ route('reservation') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Resérvation</a>
+                    <a href="{{ route('horaire') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Horaires</a>
+                    <a href="{{ route('reservation') }}" class="nav-item nav-link"><i class="far fa-file-alt me-2"></i>Resérvation</a>
                 </div>
             </nav>
         </div>
         <!-- Sidebar End -->
-       
 
 
         <!-- Content Start -->
@@ -166,14 +164,14 @@
 
 
             <!-- Sale & Revenue Start -->
-            <!-- <div class="container-fluid pt-4 px-4">
+            <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <div class="col-sm-6 col-xl-3">
                         <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-line fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Today Sale</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <p class="mb-2">Nombre de billet acheter</p>
+                                <h6 class="mb-0">5</h6>
                             </div>
                         </div>
                     </div>
@@ -205,65 +203,39 @@
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
             <!-- Sale & Revenue End -->
-
-
-
-
             <!-- Recent Sales Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-secondary text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Horaires des 2 prochains jours</h6>
-                        <a href="">Show All</a>
+                        <h6 class="mb-0">liste des resérvations</h6>
+                        <a class="btn btn-sm btn-primary" href="{{ route('create') }}">Reserver</a>
                     </div>
                     <div class="table-responsive">
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
                                 <tr class="text-white">
-                                    <th scope="col">Gare du depart</th>
-                                    <th scope="col">Gare d'arrivée</th>
-                                    <th scope="col">Date</th>
+                                    <th scope="col">Depart</th>
+                                    <th scope="col">Arrive</th>
+                                    <th scope="col">Tarif</th>
+                                    <th scope="col">Classe</th>
                                     <th scope="col">Heur de depart</th>
-                                    <th scope="col">Heur d'arrivée</th>
-                            
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($horaires as $horaire)
+
+                            @foreach ($billets as $billet)
                                 <tr>
-                                    <td>{{$horaire['gare_depart']}}</td>
-                                    <td>{{$horaire['gare_arrivee']}}</td>
-                                    <td>{{$horaire['date']}}</td>
-                                    <td>{{$horaire['heure_depart']}}</td>
-                                    <td>{{$horaire['heure_arrivee']}}</td>
-                                    <!-- <td>Paid</td> -->
-                                    <td><a class="btn btn-sm btn-primary" href="">Reserver</a></td>
+                                    <td>{{$billet->depart}}</td>
+                                    <td>{{$billet->arrive}}</td>
+                                    <td>{{$billet->tarif}}</td>
+                                    <td>{{$billet->classe}}</td>
+                                    <td>{{$billet->heure_depart}}</td>
+                                    <td><a class="btn btn-sm btn-primary" href="{{ route('showQr') }}">Voir le QR</a></td>
                                 </tr>
-                                @endforeach
-                                <tr>
-            
-                              
-                                <!-- <tr>
-                                    <td></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                   
-                                    <td><a class="btn btn-sm btn-primary" href="">Reserver</a></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                   
-                                    <td><a class="btn btn-sm btn-primary" href="">Reserver</a></td>
-                                </tr>  -->
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -272,30 +244,16 @@
             <!-- Recent Sales End -->
 
 
-           
+            
 
 
-            <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary rounded-top p-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Reservation de billet</a>, All Right Reserved. 
-                        </div>
-                        <div class="col-12 col-sm-6 text-center text-sm-end">
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By AnoirIbniyamine
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Footer End -->
+        
         </div>
         <!-- Content End -->
 
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <!-- <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a> -->
     </div>
 
     <!-- JavaScript Libraries -->

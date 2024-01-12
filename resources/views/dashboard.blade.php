@@ -64,6 +64,7 @@
                     
                     <a href="{{ route('dashboard') }}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Tableau de bord</a>
                     <a href="{{ route('horaire') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Horaires</a>
+                    <a href="{{ route('reservation') }}" class="nav-item nav-link"><i class="far fa-file-alt me-2"></i>Resérvation</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
                         <div class="dropdown-menu bg-transparent border-0">
